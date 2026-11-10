@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e6e6fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+        h2 {
+            text-align: center;
+            color: purple;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid gray;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: purple;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Event Registration</h2>
+        <form onsubmit="register(event)">
+
+            <input type="text" id="name"
+            placeholder="Enter Your Name" required>
+
+            <input type="email" id="email"
+            placeholder="Enter Your Email" required>
+
+            <input type="password" id="password"
+            placeholder="Enter Your Password" required>
+
+            <button type="submit">Register</button>
+
+        </form>
+    </div>
+    <script>
+        function register(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            alert("Registration Successful!\nWelcome " + name +
+                  "\nEmail: " + email);
+        }
+    </script>
+</body>
+</html>
